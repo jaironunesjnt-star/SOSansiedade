@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOS Ansiedade</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#e3f2fd">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>SOS Ansiedade</h1>
+    <p>Respira comigo. Você não está sozinho — vamos acalmar seu corpo e sua mente juntos.</p>
+  </header>
+
+  <main class="app-main">
+    <section class="card" id="crise-agora">
+      <h2>Crise agora (SOS)</h2>
+      <p>Se a ansiedade apertou, respira devagar comigo. Este exercício foi feito para te ajudar a recuperar o controle com suavidade.</p>
+      <button class="primary-btn" onclick="startBreathing('sos')">
+        Iniciar respiração SOS
+      </button>
+      <p class="hint">Foque no movimento do círculo. Não precisa fazer perfeito — só acompanhe no seu ritmo.</p>
+    </section>
+
+    <section class="card" id="para-dormir">
+      <h2>Para dormir</h2>
+      <p>Deita o corpo, relaxa os ombros. Esta respiração vai ajudar sua mente a desacelerar e preparar você para um descanso tranquilo.</p>
+      <button class="primary-btn" onclick="startBreathing('sleep')">
+        Iniciar respiração para dormir
+      </button>
+    </section>
+
+    <section class="card" id="para-relaxar">
+      <h2>Para relaxar</h2>
+      <p>Quando o dia estiver pesado, este exercício te ajuda a soltar a tensão e reencontrar o equilíbrio.</p>
+      <button class="primary-btn" onclick="startBreathing('relax')">
+        Iniciar respiração para relaxar
+      </button>
+    </section>
+
+    <section class="card" id="instrucoes">
+      <h2>Como usar — sem pressa, no seu tempo</h2>
+      <ul>
+        <li><strong>1.</strong> Escolha o modo que combina com o que você está sentindo agora.</li>
+        <li><strong>2.</strong> Toque em “Iniciar respiração”.</li>
+        <li><strong>3.</strong> Siga o ritmo do círculo: inspirar, segurar, soltar.</li>
+        <li><strong>4.</strong> Não se cobre. A respiração funciona mesmo quando parece difícil.</li>
+        <li><strong>5.</strong> Repita por alguns minutos e permita que seu corpo vá desacelerando.</li>
+      </ul>
+    </section>
+
+    <section class="breathing-section">
+      <h2 id="breathing-title">Respiração guiada</h2>
+      <div class="breathing-circle" id="breathing-circle"></div>
+      <p id="breathing-text">Escolha um modo para começar. Respire no seu ritmo — cada ciclo já ajuda seu corpo a se acalmar.</p>
+      <button class="secondary-btn" onclick="stopBreathing()">
+        Parar exercício
+      </button>
+    </section>
+  </main>
+
+  <!-- Botão SOS fixo na tela -->
+  <button class="sos-button" onclick="openSOS()">
+    SOS
+  </button>
+
+  <!-- Modal SOS -->
+  <div class="modal-overlay" id="sos-modal">
+    <div class="modal">
+      <h2>SOS — respira comigo</h2>
+      <p>Está tudo bem. Vamos respirar devagar para aliviar o aperto no peito. Inspire pelo nariz, segure um pouquinho, solte pela boca.</p>
+      <div class="breathing-circle small" id="sos-circle"></div>
+      <p id="sos-text">Inspire...</p>
+      <button class="secondary-btn" onclick="closeSOS()">Fechar</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
