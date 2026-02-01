@@ -1,2 +1,0 @@
-# SOSansiedade
-AplicacaoSOSansiedade
