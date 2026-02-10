@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOS Ansiedade</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#e3f2fd">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1 data-i18n="title">SOS Ansiedade</h1>
+    <p data-i18n="subtitle">
+      Respira comigo. Você não está sozinho — vamos acalmar seu corpo e sua mente juntos.
+    </p>
+
+    <div class="lang-selector">
+      <select id="languageSelect" onchange="changeLanguage(this.value)">
+        <option value="pt">🇧🇷 Português</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="en">🇺🇸 English</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <section class="card" id="crise-agora">
+      <h2 data-i18n="sos_title">Crise agora (SOS)</h2>
+      <p data-i18n="sos_desc">
+        Se a ansiedade apertou, respira devagar comigo. Este exercício foi feito para te ajudar a recuperar o controle com suavidade.
+      </p>
+      <button class="primary-btn" onclick="startBreathing('sos')" data-i18n="sos_button">
+        Iniciar respiração SOS
+      </button>
+      <p class="hint" data-i18n="sos_hint">
+        Foque no movimento do círculo. Não precisa fazer perfeito — só acompanhe no seu ritmo.
+      </p>
+    </section>
+
+    <section class="card" id="para-dormir">
+      <h2 data-i18n="sleep_title">Para dormir</h2>
+      <p data-i18n="sleep_desc">
+        Deita o corpo, relaxa os ombros. Esta respiração vai ajudar sua mente a desacelerar e preparar você para um descanso tranquilo.
+      </p>
+      <button class="primary-btn" onclick="startBreathing('sleep')" data-i18n="sleep_button">
+        Iniciar respiração para dormir
+      </button>
+    </section>
+
+    <section class="card" id="para-relaxar">
+      <h2 data-i18n="relax_title">Para relaxar</h2>
+      <p data-i18n="relax_desc">
+        Quando o dia estiver pesado, este exercício te ajuda a soltar a tensão e reencontrar o equilíbrio.
+      </p>
+      <button class="primary-btn" onclick="startBreathing('relax')" data-i18n="relax_button">
+        Iniciar respiração para relaxar
+      </button>
+    </section>
+
+    <section class="card" id="instrucoes">
+      <h2 data-i18n="how_title">Como usar — sem pressa, no seu tempo</h2>
+      <ul>
+        <li data-i18n="how_1">
