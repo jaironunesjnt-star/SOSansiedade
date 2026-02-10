@@ -1,13 +1,10 @@
 {
   "name": "SOS Ansiedade",
   "short_name": "SOS Ansiedade",
-  "description": "Respiração guiada para ansiedade, relaxamento e sono. Multilíngue e instalável como app.",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "./index.html",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#e8f4ff",
-  "theme_color": "#e8f4ff",
+  "background_color": "#1e2a44",
+  "theme_color": "#1e2a44",
   "icons": [
     {
       "src": "icon-192.png",
